@@ -1,0 +1,61 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm" [@slideDown]>
+  <div class="max-w-7xl mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center">
+        <img 
+          src="/assets/images/island-kitchen1.jpg" 
+          alt="Logo" 
+          class="h-12 w-auto"
+        />
+      </div>
+
+      <!-- Mobile menu button -->
+      <button 
+        class="md:hidden p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100"
+        (click)="toggleMenu()"
+      >
+        <i class="fas" [class.fa-bars]="!isMenuOpen" [class.fa-times]="isMenuOpen"></i>
+      </button>
+
+      <!-- Desktop menu -->
+      <div class="hidden md:flex items-center gap-6">
+        <a href="tel:+1234567890" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+          <i class="fas fa-phone h-5 w-5"></i>
+          <span>+123 456 7890</span>
+        </a>
+        <a href="mailto:info@example.com" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+          <i class="fas fa-envelope h-5 w-5"></i>
+          <span>anasbhrt30&#64;gmail.com</span>
+
+        </a>
+        <button class="bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-md transition-colors">
+          Contact Us
+          <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div 
+      class="md:hidden"
+      *ngIf="isMenuOpen"
+      [@slideDown]
+    >
+      <div class="pt-4 pb-3 space-y-4">
+        <a href="tel:+1234567890" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+          <i class="fas fa-phone h-5 w-5"></i>
+          <span>+123 456 7890</span>
+        </a>
+        <a href="mailto:info@example.com" class="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors">
+          <i class="fas fa-envelope h-5 w-5"></i>
+          <span>info&#64;example.com</span>
+
+        </a>
+        <button class="w-full bg-primary text-white hover:bg-primary/90 px-4 py-2 rounded-md transition-colors">
+          Contact Us
+          <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
